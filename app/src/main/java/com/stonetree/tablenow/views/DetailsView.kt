@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window.FEATURE_NO_TITLE
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.navArgs
-import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.CameraUpdateFactory.*
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.MarkerOptions
 import com.stonetree.tablenow.R
@@ -17,6 +16,8 @@ import com.stonetree.tablenow.viewmodels.DetailsViewModel
 import com.stonetree.view.feature.fragment.CoreFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import java.util.*
+import kotlin.concurrent.timerTask
 
 class DetailsView : CoreFragment() {
 
@@ -25,6 +26,8 @@ class DetailsView : CoreFragment() {
     private val vm: DetailsViewModel by viewModel { parametersOf(args) }
 
     private lateinit var map: SupportMapFragment
+
+    private var bannerPosition = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +44,20 @@ class DetailsView : CoreFragment() {
         map.onCreate(savedInstanceState)
         markOnMap(arrayListOf(vm.selectedMerchant()))
 
+        startImageBanner(data)
+
         return data.root
+    }
+
+    private fun startImageBanner(data: ViewDetailsBinding) {
+        val task = timerTask {
+            args.merchant.apply {
+                data.url = images[bannerPosition].url
+                if (bannerPosition == images.size)
+                    bannerPosition = 0
+            }
+        }
+        Timer().schedule(task, 0, 3000)
     }
 
     override fun onResume() {
@@ -73,7 +89,6 @@ class DetailsView : CoreFragment() {
             data.title.text = merchant.name
             data.address.text = merchant.location.address.toString()
             data.rating.rating = merchant.reviewScore
-            data.url = merchant.images.first().url
         }
     }
 
@@ -83,7 +98,7 @@ class DetailsView : CoreFragment() {
 
         map.getMapAsync { map ->
             val pos = vm.camera().position()
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, ZOOM_DISTANCE))
+            map.animateCamera(newLatLngZoom(pos, ZOOM_DISTANCE))
         }
     }
 
