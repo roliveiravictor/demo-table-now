@@ -21,4 +21,9 @@ object Constants {
     object Actions {
         const val NAVIGATOR = "com.stonetree.tablenow.views.NavigatorActivity"
     }
+
+    object Bundle {
+
+        const val MERCHANT: String = "merchant"
+    }
 }

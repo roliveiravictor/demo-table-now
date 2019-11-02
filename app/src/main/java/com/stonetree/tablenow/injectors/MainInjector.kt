@@ -10,15 +10,21 @@ import com.stonetree.restclient.feature.network.NetworkChangeReceiverImpl
 import com.stonetree.restclient.feature.network.NetworkReceiver
 import com.stonetree.tablenow.adapters.MerchantsAdapter
 import com.stonetree.tablenow.factories.MerchantsSourceFactory
-import com.stonetree.tablenow.models.MerchantsViewModel
+import com.stonetree.tablenow.viewmodels.MerchantsViewModel
 import com.stonetree.tablenow.repositories.MerchantsRepository
 import com.stonetree.tablenow.repositories.MerchantsRepositoryImpl
 import com.stonetree.tablenow.sources.MerchantsDataSource
+import com.stonetree.tablenow.viewmodels.DetailsViewModel
+import com.stonetree.tablenow.views.DetailsViewArgs
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
 class MainInjector {
+
+    private val details = module {
+        viewModel { (args: DetailsViewArgs) -> DetailsViewModel(args) }
+    }
 
     private val merchants = module {
         factory { MerchantsAdapter() }
@@ -27,7 +33,12 @@ class MainInjector {
 
         single<MerchantsRepository> { MerchantsRepositoryImpl(get()) }
 
-        viewModel { MerchantsViewModel(get(), get()) }
+        viewModel {
+            MerchantsViewModel(
+                get(),
+                get()
+            )
+        }
     }
 
     private val rest = module {
@@ -38,6 +49,6 @@ class MainInjector {
     }
 
     fun startModules(): List<Module> {
-        return arrayListOf(rest, merchants)
+        return arrayListOf(rest, merchants, details)
     }
 }

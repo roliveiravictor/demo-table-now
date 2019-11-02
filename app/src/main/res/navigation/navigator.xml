@@ -8,6 +8,24 @@
         android:id="@+id/view_merchants"
         android:name="com.stonetree.tablenow.views.MerchantsView"
         android:label="view_merchants"
-        tools:layout="@layout/view_merchants"/>
+        tools:layout="@layout/view_merchants">
+
+        <action
+            android:id="@+id/action_merchants_to_details"
+            app:destination="@id/view_details"
+            app:enterAnim="@anim/swipe_left_to_right"
+            app:exitAnim="@anim/swipe_right_to_left" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/view_details"
+        android:name="com.stonetree.tablenow.views.DetailsView"
+        android:label="view_details"
+        tools:layout="@layout/view_details">
+        <argument
+            android:name="merchant"
+            app:argType="com.stonetree.tablenow.models.Merchant" />
+    </fragment>
 
 </navigation>

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.observe
 import com.stonetree.tablenow.adapters.MerchantsAdapter
 import com.stonetree.tablenow.databinding.ViewMerchantsBinding
-import com.stonetree.tablenow.models.MerchantsViewModel
+import com.stonetree.tablenow.viewmodels.MerchantsViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

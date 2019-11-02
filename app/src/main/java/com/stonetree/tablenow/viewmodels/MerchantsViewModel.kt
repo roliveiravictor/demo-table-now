@@ -1,4 +1,4 @@
-package com.stonetree.tablenow.models
+package com.stonetree.tablenow.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -9,6 +9,7 @@ import com.stonetree.restclient.core.constants.RestClientConstants.PAGE_SIZE
 import com.stonetree.restclient.core.constants.RestClientConstants.PRE_FETCH_DISTANCE
 import com.stonetree.restclient.core.model.NetworkState
 import com.stonetree.tablenow.factories.MerchantsSourceFactory
+import com.stonetree.tablenow.models.Merchant
 import com.stonetree.tablenow.repositories.MerchantsRepository
 import java.util.concurrent.Executors
 
