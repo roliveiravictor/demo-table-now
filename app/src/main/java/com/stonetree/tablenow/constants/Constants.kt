@@ -8,6 +8,13 @@ object Constants {
         const val MERCHANTS = "/v1/merchants"
     }
 
+    object Map {
+
+        object Camera {
+            const val ZOOM_DISTANCE = 10f
+        }
+    }
+
     object Params {
 
         object Merchants {

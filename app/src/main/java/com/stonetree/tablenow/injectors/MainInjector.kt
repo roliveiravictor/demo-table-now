@@ -10,6 +10,8 @@ import com.stonetree.restclient.feature.network.NetworkChangeReceiverImpl
 import com.stonetree.restclient.feature.network.NetworkReceiver
 import com.stonetree.tablenow.adapters.MerchantsAdapter
 import com.stonetree.tablenow.factories.MerchantsSourceFactory
+import com.stonetree.tablenow.repositories.DetailsRepository
+import com.stonetree.tablenow.repositories.DetailsRepositoryImpl
 import com.stonetree.tablenow.viewmodels.MerchantsViewModel
 import com.stonetree.tablenow.repositories.MerchantsRepository
 import com.stonetree.tablenow.repositories.MerchantsRepositoryImpl
@@ -23,7 +25,8 @@ import org.koin.dsl.module
 class MainInjector {
 
     private val details = module {
-        viewModel { (args: DetailsViewArgs) -> DetailsViewModel(args) }
+        factory<DetailsRepository> { DetailsRepositoryImpl() }
+        viewModel { (args: DetailsViewArgs) -> DetailsViewModel(args, get()) }
     }
 
     private val merchants = module {

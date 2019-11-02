@@ -5,5 +5,7 @@ import java.io.Serializable
 data class Merchant(
     val name: String,
     val id: String,
-    val reviewScore: Float
-) : Serializable
+    val reviewScore: Float,
+    val location: Location,
+    val images: List<Image>
+    ) : Serializable
