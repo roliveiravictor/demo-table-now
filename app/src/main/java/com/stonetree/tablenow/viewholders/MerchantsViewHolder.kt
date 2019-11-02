@@ -14,6 +14,7 @@ class MerchantsViewHolder(
     override fun onBind(data: Merchant) {
         data.apply {
             bind.merchantName.text = name
+            bind.rating.rating = reviewScore
             bind.listener = createOnClickListener(data)
         }
     }

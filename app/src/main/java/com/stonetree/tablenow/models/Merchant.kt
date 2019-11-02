@@ -4,5 +4,6 @@ import java.io.Serializable
 
 data class Merchant(
     val name: String,
-    val id: String
+    val id: String,
+    val reviewScore: Float
 ) : Serializable
