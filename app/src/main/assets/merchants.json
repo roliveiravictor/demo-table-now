@@ -1,0 +1,403 @@
+{
+  "merchants": [
+    {
+      "id": 38869,
+      "name": "The Red Lion Inn  - Little Compton",
+      "phoneNumber": "+441608674397",
+      "currency": "GBP",
+      "locale": "en_GB",
+      "timezone": "Europe/London",
+      "location": {
+        "coordinates": {
+          "latitude": 51.970052,
+          "longitude": -1.625952
+        },
+        "address": {
+          "street": "Pill Lane",
+          "zipcode": "GL56 0RT",
+          "city": "Cheltenham",
+          "country": "GBR"
+        }
+      },
+      "reviewScore": "4.8",
+      "tagGroups": [
+        {
+          "type": "CUISINE",
+          "tags": [
+            {
+              "id": "ccb7c8c8-c6de-4b7a-8b81-55cfb278e0ce",
+              "name": "British"
+            },
+            {
+              "id": "6a2a1911-a4cc-4919-8095-fb729a2733e1",
+              "name": "European"
+            }
+          ]
+        },
+        {
+          "type": "PRICE",
+          "tags": [
+            {
+              "id": "296929a4-324e-476b-b076-2f9c061d4756",
+              "name": "price average"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/85370c3e-d90f-4565-9042-ddc69d696e84/341853_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/85370c3e-d90f-4565-9042-ddc69d696e84/341852_sld.jpg"
+        }
+      ],
+      "documents": [],
+      "links": [
+        {
+          "href": "https://www.quandoo.co.uk/place/the-red-lion-inn-38869",
+          "method": "GET",
+          "rel": "details"
+        },
+        {
+          "href": "https://widget.quandoo.co.uk/widget/reservation/merchant/MXWIl?&countryId=GBR",
+          "method": "GET",
+          "rel": "widget"
+        },
+        {
+          "href": "https://widget.quandoo.co.uk/widget/reservation/merchant/MXWIl/details?&countryId=GBR",
+          "method": "GET",
+          "rel": "widget.details"
+        }
+      ],
+      "bookable": true,
+      "openingTimes": {
+        "standardOpeningTimes": {
+          "WEDNESDAY": [
+            {
+              "start": "12:00:00",
+              "end": "15:00:00"
+            },
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "MONDAY": [
+            {
+              "start": "12:00:00",
+              "end": "15:00:00"
+            },
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "THURSDAY": [
+            {
+              "start": "12:00:00",
+              "end": "15:00:00"
+            },
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "SUNDAY": [
+            {
+              "start": "12:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "TUESDAY": [
+            {
+              "start": "12:00:00",
+              "end": "15:00:00"
+            },
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "FRIDAY": [
+            {
+              "start": "12:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "SATURDAY": [
+            {
+              "start": "12:00:00",
+              "end": "23:00:00"
+            }
+          ]
+        }
+      },
+      "ccvEnabled": false
+    },
+    {
+      "id": 14918,
+      "name": "Restaurant Dynasty",
+      "phoneNumber": "+31206268400",
+      "currency": "EUR",
+      "locale": "nl_NL",
+      "timezone": "Europe/Amsterdam",
+      "location": {
+        "coordinates": {
+          "latitude": 52.36635,
+          "longitude": 4.890594
+        },
+        "address": {
+          "street": "Reguliersdwarsstraat",
+          "number": "30",
+          "zipcode": "1017 BM",
+          "city": "Amsterdam",
+          "country": "NLD"
+        }
+      },
+      "reviewScore": "5.3",
+      "tagGroups": [
+        {
+          "type": "CUISINE",
+          "tags": [
+            {
+              "id": "0b48e3f6-b749-458a-8484-38279c5837e9",
+              "name": "Chinese"
+            },
+            {
+              "id": "2d433a8d-ff63-4d0b-b6e8-804cbd44a440",
+              "name": "Asian"
+            },
+            {
+              "id": "da455679-6487-448b-89d5-80c15a5fd6e3",
+              "name": "Cantonese"
+            }
+          ]
+        },
+        {
+          "type": "PRICE",
+          "tags": [
+            {
+              "id": "296929a4-324e-476b-b076-2f9c061d4756",
+              "name": "price average"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/3cb97a84-affe-4d76-96a1-25be9d9fc0e8/99379_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/3cb97a84-affe-4d76-96a1-25be9d9fc0e8/99382_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/3cb97a84-affe-4d76-96a1-25be9d9fc0e8/99385_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/3cb97a84-affe-4d76-96a1-25be9d9fc0e8/99389_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/3cb97a84-affe-4d76-96a1-25be9d9fc0e8/99390_sld.jpg"
+        }
+      ],
+      "documents": [],
+      "links": [
+        {
+          "href": "https://www.quandoo.nl/place/reservationsrestaurantdynasty-nl-14918",
+          "method": "GET",
+          "rel": "details"
+        },
+        {
+          "href": "https://widget.quandoo.nl/widget/reservation/merchant/pXCHq?&countryId=NLD",
+          "method": "GET",
+          "rel": "widget"
+        },
+        {
+          "href": "https://widget.quandoo.nl/widget/reservation/merchant/pXCHq/details?&countryId=NLD",
+          "method": "GET",
+          "rel": "widget.details"
+        }
+      ],
+      "bookable": true,
+      "openingTimes": {
+        "standardOpeningTimes": {
+          "WEDNESDAY": [
+            {
+              "start": "17:30:00",
+              "end": "22:30:00"
+            }
+          ],
+          "MONDAY": [
+            {
+              "start": "17:30:00",
+              "end": "22:30:00"
+            }
+          ],
+          "THURSDAY": [
+            {
+              "start": "17:30:00",
+              "end": "22:30:00"
+            }
+          ],
+          "SUNDAY": [
+            {
+              "start": "17:30:00",
+              "end": "22:30:00"
+            }
+          ],
+          "FRIDAY": [
+            {
+              "start": "17:30:00",
+              "end": "22:30:00"
+            }
+          ],
+          "SATURDAY": [
+            {
+              "start": "17:30:00",
+              "end": "22:30:00"
+            }
+          ]
+        }
+      },
+      "ccvEnabled": false
+    },
+    {
+      "id": 15692,
+      "name": "Cinema Paradiso",
+      "phoneNumber": "+31206237344",
+      "currency": "EUR",
+      "locale": "nl_NL",
+      "timezone": "Europe/Amsterdam",
+      "location": {
+        "coordinates": {
+          "latitude": 52.378239,
+          "longitude": 4.881634
+        },
+        "address": {
+          "street": "Westerstraat",
+          "number": "186",
+          "zipcode": "1015 MR",
+          "city": "Amsterdam",
+          "country": "NLD"
+        }
+      },
+      "reviewScore": "5.1",
+      "tagGroups": [
+        {
+          "type": "CUISINE",
+          "tags": [
+            {
+              "id": "14b07652-b85b-4543-a425-814eae11e57b",
+              "name": "Drinks"
+            },
+            {
+              "id": "24bace5e-9cb3-4e52-86e6-18543c4b9135",
+              "name": "Seafood"
+            },
+            {
+              "id": "b1668bc9-2afe-4324-be12-eec3d7df52d8",
+              "name": "International"
+            },
+            {
+              "id": "0c6e9969-c50e-4ae9-ba22-a9b6b1a1f047",
+              "name": "Italian"
+            }
+          ]
+        },
+        {
+          "type": "PRICE",
+          "tags": [
+            {
+              "id": "296929a4-324e-476b-b076-2f9c061d4756",
+              "name": "price average"
+            }
+          ]
+        }
+      ],
+      "images": [
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/5c42d3e0-15cb-4417-9c69-79ca3199f26d/227474_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/5c42d3e0-15cb-4417-9c69-79ca3199f26d/104388_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/5c42d3e0-15cb-4417-9c69-79ca3199f26d/227477_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/5c42d3e0-15cb-4417-9c69-79ca3199f26d/227475_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/5c42d3e0-15cb-4417-9c69-79ca3199f26d/227476_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/5c42d3e0-15cb-4417-9c69-79ca3199f26d/104390_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/5c42d3e0-15cb-4417-9c69-79ca3199f26d/104396_sld.jpg"
+        },
+        {
+          "url": "https://d24horgtq2wtu8.cloudfront.net/5c42d3e0-15cb-4417-9c69-79ca3199f26d/104395_sld.jpg"
+        }
+      ],
+      "documents": [],
+      "links": [
+        {
+          "href": "https://www.quandoo.nl/place/cinema-paradiso-15692",
+          "method": "GET",
+          "rel": "details"
+        },
+        {
+          "href": "https://widget.quandoo.nl/widget/reservation/merchant/BkZ5I?&countryId=NLD",
+          "method": "GET",
+          "rel": "widget"
+        },
+        {
+          "href": "https://widget.quandoo.nl/widget/reservation/merchant/BkZ5I/details?&countryId=NLD",
+          "method": "GET",
+          "rel": "widget.details"
+        }
+      ],
+      "bookable": true,
+      "openingTimes": {
+        "standardOpeningTimes": {
+          "WEDNESDAY": [
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "THURSDAY": [
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "TUESDAY": [
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "FRIDAY": [
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ],
+          "SATURDAY": [
+            {
+              "start": "18:00:00",
+              "end": "23:00:00"
+            }
+          ]
+        }
+      },
+      "ccvEnabled": false
+    }
+  ],
+  "size": 20305,
+  "offset": 0,
+  "limit": 3
+}

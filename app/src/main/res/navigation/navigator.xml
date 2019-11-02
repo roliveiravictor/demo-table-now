@@ -6,9 +6,8 @@
 
     <fragment
         android:id="@+id/view_merchants"
-        android:name="com.stonetree.tablenow.features.merchants.view.MerchantsView"
+        android:name="com.stonetree.tablenow.views.MerchantsView"
         android:label="view_merchants"
-        tools:layout="@layout/view_merchants">
-    </fragment>
+        tools:layout="@layout/view_merchants"/>
 
 </navigation>

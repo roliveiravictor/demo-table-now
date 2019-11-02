@@ -1,3 +1,5 @@
+package com.stonetree.tablenow.injectors
+
 import com.stonetree.restclient.feature.RestClient
 import com.stonetree.restclient.feature.RestClientImpl
 import com.stonetree.restclient.feature.httpclient.CoreHttpClient
@@ -6,10 +8,27 @@ import com.stonetree.restclient.feature.interceptor.RestClientInterceptor
 import com.stonetree.restclient.feature.interceptor.RestClientInterceptorImpl
 import com.stonetree.restclient.feature.network.NetworkChangeReceiverImpl
 import com.stonetree.restclient.feature.network.NetworkReceiver
+import com.stonetree.tablenow.adapters.MerchantsAdapter
+import com.stonetree.tablenow.factories.MerchantsSourceFactory
+import com.stonetree.tablenow.models.MerchantsViewModel
+import com.stonetree.tablenow.repositories.MerchantsRepository
+import com.stonetree.tablenow.repositories.MerchantsRepositoryImpl
+import com.stonetree.tablenow.sources.MerchantsDataSource
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
-class Injector {
+class MainInjector {
+
+    private val merchants = module {
+        factory { MerchantsAdapter() }
+        factory { MerchantsDataSource(get()) }
+        factory { MerchantsSourceFactory(get()) }
+
+        single<MerchantsRepository> { MerchantsRepositoryImpl(get()) }
+
+        viewModel { MerchantsViewModel(get(), get()) }
+    }
 
     private val rest = module {
         factory<RestClientInterceptor> { RestClientInterceptorImpl() }
@@ -19,6 +38,6 @@ class Injector {
     }
 
     fun startModules(): List<Module> {
-        return arrayListOf(rest)
+        return arrayListOf(rest, merchants)
     }
 }

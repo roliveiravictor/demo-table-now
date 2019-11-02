@@ -10,7 +10,7 @@
 
         <variable
             name="view"
-            type="com.stonetree.tablenow.features.merchants.view.MerchantsView" />
+            type="com.stonetree.tablenow.views.MerchantsView" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

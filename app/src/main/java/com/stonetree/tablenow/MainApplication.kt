@@ -1,9 +1,7 @@
 package com.stonetree.tablenow
 
-import Injector
+import com.stonetree.tablenow.injectors.MainInjector
 import android.app.Application
-import com.stonetree.restclient.feature.RestClient
-import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.loadKoinModules
@@ -17,7 +15,7 @@ class MainApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MainApplication)
-            Injector().apply {
+            MainInjector().apply {
                 loadKoinModules(startModules())
             }
         }

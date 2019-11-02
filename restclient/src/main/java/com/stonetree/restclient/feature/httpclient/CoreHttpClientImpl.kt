@@ -1,6 +1,6 @@
 package com.stonetree.restclient.feature.httpclient
 
-import com.stonetree.restclient.core.constants.RestclientConstants.TIMEOUT
+import com.stonetree.restclient.core.constants.RestClientConstants.TIMEOUT
 import com.stonetree.restclient.feature.interceptor.RestClientInterceptor
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit

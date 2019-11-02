@@ -1,6 +1,7 @@
-package com.stonetree.tablenow
+package com.stonetree.tablenow.views
 
 import android.os.Bundle
+import com.stonetree.tablenow.R
 
 class NavigatorActivity : MainActivity() {
 

@@ -9,7 +9,7 @@ import android.net.ConnectivityManager
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.intent.Intents.*
 import androidx.test.espresso.intent.matcher.IntentMatchers.*
-import com.stonetree.restclient.core.constants.RestclientConstants
+import com.stonetree.restclient.core.constants.RestClientConstants
 import junit.framework.TestCase.assertNotNull
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.any
@@ -44,7 +44,7 @@ class NetworkReceiverImplTest {
         manager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
         network.registerOfflineIntent(
-            RestclientConstants.ACTIONS.NETWORK_ERROR,
+            RestClientConstants.ACTIONS.NETWORK_ERROR,
             "mMessage"
         )
 

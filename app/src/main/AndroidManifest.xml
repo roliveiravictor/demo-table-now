@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".NavigatorActivity"
+            android:name=".views.NavigatorActivity"
             android:launchMode="singleInstance"
             android:noHistory="true">
 
@@ -30,7 +30,7 @@
 
         </activity>
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".views.MainActivity" />
 
     </application>
 

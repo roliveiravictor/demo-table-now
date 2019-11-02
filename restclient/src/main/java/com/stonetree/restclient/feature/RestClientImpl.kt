@@ -11,13 +11,13 @@ class RestClientImpl(httpClient: CoreHttpClient) : RestClient {
     private val http: OkHttpClient = httpClient.create()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://fake-poi-api.mytaxi.com/")
+        .baseUrl("https://api.quandoo.com")
         .addConverterFactory(GsonConverterFactory.create())
         .client(http)
         .build()
 
     override fun key(): String = ""
 
-    override fun <T : Any> generate(clazz: KClass<T>) = retrofit.create(clazz.java)
+    override fun <T : Any> generate(clazz: KClass<T>): T = retrofit.create(clazz.java)
 
 }
