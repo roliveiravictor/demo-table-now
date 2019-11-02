@@ -1,0 +1,2 @@
+rootProject.name='demo-table-now'
+include ':app'
