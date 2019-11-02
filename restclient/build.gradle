@@ -1,0 +1,79 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        buildTypes.each {
+            it.buildConfigField "String", "ROOT_DIR", "\"${projectDir.parent}\""
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    api "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$interceptor_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$converter_gson_version"
+    implementation "com.squareup.okhttp3:mockwebserver:$mock_web_server_version"
+
+    debugImplementation "com.github.donfuxx:Mockinizer:$mocknizer_version"
+
+    api "androidx.constraintlayout:constraintlayout:$constraint_version"
+
+    api "androidx.test.espresso:espresso-idling-resource:$espresso_core_version"
+
+    api "com.airbnb.android:lottie:$lottie_version"
+
+    testApi 'junit:junit:4.12'
+    testApi "org.mockito:mockito-core:$mockito_core_version"
+    testApi "org.mockito:mockito-inline:$mockito_core_version"
+    testApi "androidx.test.espresso:espresso-intents:$espresso_core_version"
+
+    testApi "androidx.test:core:$test_core_version"
+    testApi "org.koin:koin-test:$koin_test_version"
+    testApi "org.robolectric:robolectric:$robolectric_version"
+
+    androidTestImplementation "androidx.test.ext:junit:$andx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
+}
