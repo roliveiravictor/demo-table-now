@@ -41,7 +41,7 @@ class MerchantsRepositoryImpl(
         callback: MerchantsPool.(List<Merchant>) -> Unit
     ) {
         request = api.get(params.key)
-        request.enqueue(network()) {
+        request.enqueue(null) {
             onResponse = { response ->
                 response.body()?.apply {
                     merchants.let { merchant ->

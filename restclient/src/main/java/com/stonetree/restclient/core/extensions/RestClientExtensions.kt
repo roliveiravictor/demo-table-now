@@ -7,15 +7,15 @@ import com.stonetree.restclient.feature.RestClientCallback
 import retrofit2.Call
 
 fun <T> Call<T>.enqueue(
-    network: MutableLiveData<NetworkState>,
+    network: MutableLiveData<NetworkState>?,
     callback: RestClientCallback<T>.() -> Unit
 ) {
     RestClientIdling.getResource().increment()
-    network.apply {
+    network?.apply {
         postValue(NetworkState.LOADING)
-        RestClientCallback<T>(network).also { core ->
-            callback.invoke(core)
-            enqueue(core)
-        }
+    }
+    RestClientCallback<T>(network).also { core ->
+        callback.invoke(core)
+        enqueue(core)
     }
 }

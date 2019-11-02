@@ -7,19 +7,19 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RestClientCallback<T>(private val network: MutableLiveData<NetworkState>) : Callback<T> {
+class RestClientCallback<T>(private val network: MutableLiveData<NetworkState>?) : Callback<T> {
 
     var onResponse: ((Response<T>) -> Unit)? = null
     var onFailure: ((t: Throwable?) -> Unit)? = null
 
     override fun onFailure(call: Call<T>, t: Throwable) {
-        network.postValue(NetworkState.error(t.message))
+        network?.postValue(NetworkState.error(t.message))
         onFailure?.invoke(t)
         RestClientIdling.getResource().decrement()
     }
 
     override fun onResponse(call: Call<T>, response: Response<T>) {
-        network.postValue(NetworkState.LOADED)
+        network?.postValue(NetworkState.LOADED)
         onResponse?.invoke(response)
         RestClientIdling.getResource().decrement()
     }
