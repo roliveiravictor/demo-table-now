@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">demo-table-now</string>
+    <string name="app_name">Table Now</string>
+    <string name="offline_message">You\'re currently offline. Reconnecting...</string>
 </resources>

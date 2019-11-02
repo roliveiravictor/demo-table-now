@@ -1,0 +1,43 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="network"
+            type="com.stonetree.restclient.core.model.NetworkState" />
+
+        <variable
+            name="view"
+            type="com.stonetree.tablenow.features.merchants.view.MerchantsView" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_merchants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/view_core"
+            layout="@layout/view_core"
+            app:network="@{network.status.isLoading}"
+            app:retry="@{() -> view.onRequestRetry()}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/merchants"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="6dp"
+            app:isIdle="@{network}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:spanCount="3"
+            tools:listitem="@layout/item_merchants" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
