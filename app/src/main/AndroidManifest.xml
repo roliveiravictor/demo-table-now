@@ -26,7 +26,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
-                <action android:name="com.stonetree.tablenow.NavigatorActivity" />
+                <action android:name="com.stonetree.tablenow.views.NavigatorActivity" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.DEFAULT" />
