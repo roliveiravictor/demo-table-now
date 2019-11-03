@@ -16,8 +16,6 @@ import org.robolectric.RobolectricTestRunner
 @RunWith(RobolectricTestRunner::class)
 class MerchantsRepositoryTest : AutoCloseKoinTest() {
 
-    private val rest = mock(RestClient::class.java)
-
     private val repository: MerchantsRepository by inject()
 
     @Test
