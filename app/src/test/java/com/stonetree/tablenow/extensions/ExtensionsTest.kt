@@ -5,6 +5,7 @@ import com.stonetree.tablenow.models.Coordinates
 import com.stonetree.tablenow.models.Location
 import com.stonetree.tablenow.models.Merchant
 import junit.framework.TestCase.assertEquals
+import junit.framework.TestCase.assertNull
 import org.junit.Test
 
 class ExtensionsTest {
@@ -35,7 +36,7 @@ class ExtensionsTest {
         merchant.apply {
             location.coordinates.apply {
                 createMapMark().run {
-                    assertEquals(id, title)
+                    assertNull(title)
                     assertEquals(position.latitude, latitude)
                     assertEquals(position.longitude, longitude)
                 }
