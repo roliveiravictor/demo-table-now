@@ -5,6 +5,14 @@
     <data>
 
         <variable
+            name="orientation"
+            type="Integer" />
+
+        <variable
+            name="url"
+            type="String" />
+
+        <variable
             name="listener"
             type="android.view.View.OnClickListener" />
     </data>
@@ -15,52 +23,55 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="6dp"
         android:onClick="@{listener}"
-        android:padding="2dp">
+        android:padding="2dp"
+        app:cardBackgroundColor="@android:color/white">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="6dp"
-            android:maxWidth="150dp"
-            android:maxHeight="300dp"
-            android:minWidth="100dp"
-            android:minHeight="150dp"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:resize="@{orientation}">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="4dp">
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/banner_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toTopOf="@+id/barrier"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:loadImage="@{url}"
+                    tools:ignore="ContentDescription"
+                    tools:src="@mipmap/ic_launcher" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="top"
+                    app:constraint_referenced_ids="merchant_name" />
 
                 <TextView
                     android:id="@+id/merchant_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@android:color/white"
                     android:gravity="center"
-                    app:layout_constraintBottom_toTopOf="@+id/rating"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:layout_editor_absoluteX="4dp"
-                    tools:text="Name" />
-
-                <RatingBar
-                    android:id="@+id/rating"
-                    style="?android:attr/ratingBarStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:max="6"
-                    android:numStars="5"
-                    android:stepSize="0.1"
+                    android:padding="4dp"
+                    android:scrollHorizontally="false"
+                    android:singleLine="false"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/merchant_name"
-                    tools:rating="3.5" />
+                    tools:text="Name" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

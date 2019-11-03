@@ -1,17 +1,19 @@
 package com.stonetree.tablenow.binders
 
-import android.content.res.Configuration
 import android.content.res.Configuration.ORIENTATION_LANDSCAPE
 import android.content.res.Configuration.ORIENTATION_PORTRAIT
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy.AUTOMATIC
 import com.stonetree.restclient.core.model.NetworkState
 import com.stonetree.restclient.core.model.Status
 import com.stonetree.tablenow.R
-import kotlinx.android.synthetic.main.view_details.*
+
 
 @BindingAdapter("isIdle")
 fun bindIsIdle(view: View, network: NetworkState?) {
@@ -22,9 +24,9 @@ fun bindIsIdle(view: View, network: NetworkState?) {
     }
 }
 
-@BindingAdapter("viewMode")
-fun bindViewMode(view: View, mode: Int) {
-    when (mode) {
+@BindingAdapter("orientation")
+fun bindOrientation(view: View, orientation: Int) {
+    when (orientation) {
         ORIENTATION_LANDSCAPE -> view.visibility = ConstraintLayout.GONE
         ORIENTATION_PORTRAIT -> view.visibility = ConstraintLayout.VISIBLE
     }
@@ -35,7 +37,26 @@ fun bindLoadImage(view: ImageView, url: String? = "") {
     view.tag = url
     Glide.with(view)
         .load(url)
-        .centerCrop()
+        .diskCacheStrategy(AUTOMATIC)
         .placeholder(R.drawable.loading_animation)
         .into(view)
+}
+
+@BindingAdapter("resize")
+fun bindResize(view: View, orientation: Int) {
+
+    when (orientation) {
+        ORIENTATION_LANDSCAPE -> {
+            val layoutParams: ViewGroup.LayoutParams = view.layoutParams
+            layoutParams.height = view.context.resources.displayMetrics.heightPixels / 2
+            layoutParams.width = view.context.resources.displayMetrics.widthPixels / 3
+            view.layoutParams = layoutParams
+        }
+        ORIENTATION_PORTRAIT -> {
+            val layoutParams: ViewGroup.LayoutParams = view.layoutParams
+            layoutParams.height = view.context.resources.displayMetrics.heightPixels / 6
+            layoutParams.width = view.context.resources.displayMetrics.widthPixels / 2
+            view.layoutParams = layoutParams
+        }
+    }
 }

@@ -35,7 +35,7 @@
             android:id="@+id/banner_pager"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            app:viewMode="@{mode}"
+            app:orientation="@{mode}"
             android:background="@android:color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
