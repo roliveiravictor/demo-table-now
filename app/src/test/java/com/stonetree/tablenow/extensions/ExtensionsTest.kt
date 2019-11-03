@@ -28,7 +28,8 @@ class ExtensionsTest {
             "mName",
             "mId",
             0.0f,
-            location
+            location,
+            arrayListOf()
         )
 
         merchant.apply {

@@ -1,14 +1,12 @@
 package com.stonetree.tablenow.views
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.navArgs
-import com.google.android.gms.maps.CameraUpdateFactory.*
+import com.google.android.gms.maps.CameraUpdateFactory.newLatLngZoom
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.MarkerOptions
 import com.stonetree.tablenow.R
@@ -76,6 +74,8 @@ class DetailsView : CoreFragment(), MerchantBanner {
             args.merchant.images,
             this
         )
+
+        data.mode = resources.configuration.orientation
     }
 
     private fun bindObservers(data: ViewDetailsBinding) {
