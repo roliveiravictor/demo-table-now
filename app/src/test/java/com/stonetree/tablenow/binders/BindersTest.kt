@@ -17,7 +17,9 @@ import org.robolectric.RobolectricTestRunner
 @RunWith(RobolectricTestRunner::class)
 class BindersTest: AutoCloseKoinTest() {
 
-    private val view: TextView = TextView(ApplicationProvider.getApplicationContext())
+    private val view: TextView = TextView(
+        ApplicationProvider.getApplicationContext()
+    )
 
     @Test
     fun test_bindIsIdleOnSuccess_shouldReturnVisible() {

@@ -13,6 +13,9 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy.AUTOMATIC
 import com.stonetree.restclient.core.model.NetworkState
 import com.stonetree.restclient.core.model.Status
 import com.stonetree.tablenow.R
+import com.stonetree.tablenow.extensions.calculateHeight
+import com.stonetree.tablenow.extensions.calculateWidth
+import com.stonetree.tablenow.extensions.resize
 
 
 @BindingAdapter("isIdle")
@@ -35,28 +38,23 @@ fun bindOrientation(view: View, orientation: Int) {
 @BindingAdapter("loadImage")
 fun bindLoadImage(view: ImageView, url: String? = "") {
     view.tag = url
-    Glide.with(view)
-        .load(url)
-        .diskCacheStrategy(AUTOMATIC)
-        .placeholder(R.drawable.loading_animation)
-        .into(view)
+    view.context.resources.apply {
+        Glide.with(view)
+            .load(url)
+            .override(
+                displayMetrics.calculateHeight(2),
+                displayMetrics.calculateWidth(3)
+            )
+            .diskCacheStrategy(AUTOMATIC)
+            .placeholder(R.drawable.loading_animation)
+            .into(view)
+    }
 }
 
 @BindingAdapter("resize")
 fun bindResize(view: View, orientation: Int) {
-
     when (orientation) {
-        ORIENTATION_LANDSCAPE -> {
-            val layoutParams: ViewGroup.LayoutParams = view.layoutParams
-            layoutParams.height = view.context.resources.displayMetrics.heightPixels / 2
-            layoutParams.width = view.context.resources.displayMetrics.widthPixels / 3
-            view.layoutParams = layoutParams
-        }
-        ORIENTATION_PORTRAIT -> {
-            val layoutParams: ViewGroup.LayoutParams = view.layoutParams
-            layoutParams.height = view.context.resources.displayMetrics.heightPixels / 6
-            layoutParams.width = view.context.resources.displayMetrics.widthPixels / 2
-            view.layoutParams = layoutParams
-        }
+        ORIENTATION_LANDSCAPE -> view.resize(3, 2)
+        ORIENTATION_PORTRAIT -> view.resize(1, 4)
     }
 }

@@ -60,14 +60,13 @@
                     app:barrierDirection="top"
                     app:constraint_referenced_ids="merchant_name" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/merchant_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/white"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:scrollHorizontally="false"
                     android:singleLine="false"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
