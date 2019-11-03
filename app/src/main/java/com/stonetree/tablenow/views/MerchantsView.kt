@@ -22,12 +22,12 @@ class MerchantsView : MainFragment() {
         viewGroup: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val data = ViewMerchantsBinding.inflate(inflater, viewGroup, false)
+        val bind = ViewMerchantsBinding.inflate(inflater, viewGroup, false)
 
-        bindXml(data, adapter)
-        bindObservers(data, adapter)
+        bindXml(bind, adapter)
+        bindObservers(bind, adapter)
 
-        return data.root
+        return bind.root
     }
 
     override fun onRequestRetry() {
@@ -35,20 +35,20 @@ class MerchantsView : MainFragment() {
     }
 
     private fun bindXml(
-        data: ViewMerchantsBinding,
+        bind: ViewMerchantsBinding,
         adapter: MerchantsAdapter
     ) {
-        data.view = this@MerchantsView
-        data.merchants.adapter = adapter
+        bind.view = this@MerchantsView
+        bind.merchants.adapter = adapter
     }
 
-    private fun bindObservers(data: ViewMerchantsBinding, adapter: MerchantsAdapter) {
+    private fun bindObservers(bind: ViewMerchantsBinding, adapter: MerchantsAdapter) {
         vm.merchants.observe(viewLifecycleOwner) { merchants ->
             adapter.submitList(merchants)
         }
 
         vm.network.observe(viewLifecycleOwner) { network ->
-            data.network = network
+            bind.network = network
         }
     }
 }

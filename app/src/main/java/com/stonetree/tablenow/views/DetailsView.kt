@@ -32,17 +32,17 @@ class DetailsView : CoreFragment(), MerchantBanner {
         viewGroup: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val data = ViewDetailsBinding
+        val bind = ViewDetailsBinding
             .inflate(inflater, viewGroup, false)
 
         bindMap()
-        bindXml(data)
-        bindObservers(data)
+        bindXml(bind)
+        bindObservers(bind)
 
         map.onCreate(savedInstanceState)
         markOnMap(arrayListOf(vm.selectedMerchant()))
 
-        return data.root
+        return bind.root
     }
 
     override fun onResume() {
@@ -67,22 +67,22 @@ class DetailsView : CoreFragment(), MerchantBanner {
 
     override fun view() = this
 
-    private fun bindXml(data: ViewDetailsBinding) {
-        data.view = this@DetailsView
+    private fun bindXml(bind: ViewDetailsBinding) {
+        bind.view = this@DetailsView
 
-        data.bannerPager.adapter = BannerAdapter(
+        bind.bannerPager.adapter = BannerAdapter(
             args.merchant.images,
             this
         )
 
-        data.mode = resources.configuration.orientation
+        bind.mode = resources.configuration.orientation
     }
 
-    private fun bindObservers(data: ViewDetailsBinding) {
+    private fun bindObservers(bind: ViewDetailsBinding) {
         vm.merchant.observe(viewLifecycleOwner) { merchant ->
-            data.title.text = merchant.name
-            data.address.text = merchant.location.address.toString()
-            data.rating.rating = merchant.reviewScore
+            bind.title.text = merchant.name
+            bind.address.text = merchant.location.address.toString()
+            bind.rating.rating = merchant.reviewScore
         }
     }
 
