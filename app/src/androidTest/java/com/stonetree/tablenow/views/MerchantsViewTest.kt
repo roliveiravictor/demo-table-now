@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.*
 import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.*
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -80,18 +79,6 @@ class MerchantsViewTest {
                 )
             )
         ).check(matches(isDisplayed()))
-    }
-
-    @Test
-    fun tag_withValue_shouldReturnMerchantsView() {
-        onView(
-            allOf(
-                withId(R.id.merchant_row),
-                withTagValue(
-                    `is`(38869L)
-                )
-            )
-        ).perform(click())
     }
 
     @Test

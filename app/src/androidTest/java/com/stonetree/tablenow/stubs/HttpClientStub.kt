@@ -7,6 +7,7 @@ import com.stonetree.restclient.core.constants.RestClientConstants.TIMEOUT
 import com.stonetree.tablenow.extensions.readFile
 import com.stonetree.restclient.feature.httpclient.CoreHttpClient
 import com.stonetree.restclient.feature.interceptor.RestClientInterceptor
+import com.stonetree.tablenow.constants.Constants.Endpoints
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.mockwebserver.MockResponse
@@ -17,7 +18,7 @@ class HttpClientStub(interceptor: RestClientInterceptor, context: Context) : Cor
     private val interceptor: HttpLoggingInterceptor = interceptor.log()
 
     private val mocks: Map<RequestFilter, MockResponse> = mapOf(
-        RequestFilter("/") to MockResponse().apply {
+        RequestFilter(Endpoints.MERCHANTS) to MockResponse().apply {
             setResponseCode(200)
             setBody("merchants.json".readFile(context))
         }

@@ -15,7 +15,7 @@ class MerchantsAdapter : PagedListAdapter<Merchant, MerchantsViewHolder>(
     override fun onBindViewHolder(holder: MerchantsViewHolder, position: Int) {
         getItem(position)?.let { merchant ->
             with(holder) {
-                itemView.tag = merchant.name
+                itemView.tag = merchant.id
                 onBind(merchant)
             }
         }
