@@ -73,10 +73,10 @@ class MerchantsViewTest {
     fun tag_withValue_shouldReturnVisible() {
         onView(
             allOf(
-                withId(R.id.merchant_row),
-                withTagValue(
-                    `is`(38869L)
-                )
+                withId(R.id.merchants),
+                hasDescendant(withText(
+                    "Restaurant Dynasty"
+                ))
             )
         ).check(matches(isDisplayed()))
     }
