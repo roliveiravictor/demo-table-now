@@ -28,6 +28,9 @@ buildscript {
         lifecycle_version = '2.2.0-rc01'
         maps_version = '17.0.0'
         glide_version = '4.10.0'
+        sca_version = '1.0'
+        ktlint_version = '8.0.0'
+        detekt_version = '1.0.0'
     }
 
     repositories {
@@ -35,6 +38,7 @@ buildscript {
         jcenter()
         maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
         maven { url 'https://jitpack.io' }
+        gradlePluginPortal()
     }
 
     dependencies {
@@ -42,8 +46,15 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_ui_version"
         classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$safeargs_version"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detekt_version"
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlint_version"
+        classpath "com.novoda:gradle-static-analysis-plugin:$sca_version"
     }
 }
+
+ext.ReporterType = org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
+apply from: rootProject.file('sca-config/tasks.gradle')
 
 allprojects {
     repositories {

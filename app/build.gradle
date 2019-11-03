@@ -8,6 +8,8 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: 'androidx.navigation.safeargs'
 
+apply from: 'jacoco.gradle'
+
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
@@ -83,3 +85,5 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$andx_junit_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
 }
+
+apply from: rootProject.file('sca-config/static-analysis.gradle')
