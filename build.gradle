@@ -31,6 +31,7 @@ buildscript {
         sca_version = '1.0'
         ktlint_version = '8.0.0'
         detekt_version = '1.0.0'
+        butler_version = '2.0.0'
     }
 
     repositories {

@@ -65,18 +65,4 @@ class NetworkReceiverImplTest {
     fun offlineMessageKey_shouldReturnNotNull() {
         assertNotNull(network.offlineMessageKey())
     }
-
-    @Test
-    @Ignore
-    fun test() {
-        /* Review NoSuchMethodError getActiveNetwork */
-        toPackage("com.stonetree.restclient").apply {
-            intending(this).respondWith(dummy)
-
-            val intent = Intent(ConnectivityManager.CONNECTIVITY_ACTION)
-            context.sendBroadcast(intent)
-
-            intended(this)
-        }
-    }
 }

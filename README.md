@@ -89,6 +89,7 @@
 - sca               1.0
 - ktlint            8.0.0
 - detekt            1.0.0
+- butler            '2.0.0'
 
 # Run
 
