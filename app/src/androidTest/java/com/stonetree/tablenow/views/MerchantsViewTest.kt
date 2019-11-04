@@ -70,7 +70,7 @@ class MerchantsViewTest {
     }
 
     @Test
-    fun tag_withValue_shouldReturnVisible() {
+    fun merchant_withName_shouldReturnVisible() {
         onView(
             allOf(
                 withId(R.id.merchants),
