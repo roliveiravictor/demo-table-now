@@ -74,9 +74,11 @@ class MerchantsViewTest {
         onView(
             allOf(
                 withId(R.id.merchants),
-                hasDescendant(withText(
-                    "Restaurant Dynasty"
-                ))
+                hasDescendant(
+                    withText(
+                        "Restaurant Dynasty"
+                    )
+                )
             )
         ).check(matches(isDisplayed()))
     }
