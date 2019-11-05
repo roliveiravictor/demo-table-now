@@ -16,7 +16,7 @@ class MerchantsDataSource(
         callback: LoadInitialCallback<Long, Merchant>
     ) {
         repository.load {
-            callback.onResult(this, null, 30)
+            callback.onResult(this, null, PAGE_LIMIT.toLong())
         }
     }
 
