@@ -21,6 +21,7 @@ import junit.framework.TestCase
 import kotlinx.android.synthetic.main.view_merchants.*
 import org.hamcrest.Matchers.*
 import org.junit.*
+import org.junit.Assert.assertNotEquals
 import org.junit.runner.RunWith
 import org.koin.core.context.loadKoinModules
 import org.koin.dsl.module
@@ -81,14 +82,6 @@ class MerchantsViewTest {
                 )
             )
         ).check(matches(isDisplayed()))
-    }
-
-    @Test
-    fun onCreate_shouldNotBeEmpty() {
-        Assert.assertNotEquals(
-            rule.activity.merchants.adapter?.itemCount,
-            0
-        )
     }
 
     @Test
