@@ -7,7 +7,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.PagerAdapter
 import com.stonetree.tablenow.R
 import com.stonetree.tablenow.binders.bindLoadImage
-import com.stonetree.tablenow.databinding.ViewDetailsBinding
 import com.stonetree.tablenow.interfaces.MerchantBanner
 import com.stonetree.tablenow.models.Image
 

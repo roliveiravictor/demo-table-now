@@ -15,37 +15,37 @@ class BindersTest {
 
     @Test
     fun isLoading_withFailedRequest_shouldReturnGone() {
-        bindIsLoading( view, -1)
+        bindIsLoading(view, -1)
         assertEquals(view.visibility, View.GONE)
     }
 
     @Test
     fun isLoading_withRunningRequest_shouldReturnVisible() {
-        bindIsLoading( view, 0)
+        bindIsLoading(view, 0)
         assertEquals(view.visibility, View.VISIBLE)
     }
 
     @Test
     fun isLoading_withLoadedRequest_shouldReturnGone() {
-        bindIsLoading( view, 1)
+        bindIsLoading(view, 1)
         assertEquals(view.visibility, View.GONE)
     }
 
     @Test
     fun isFailure_withFailureRequest_shouldReturnVisible() {
-        bindIsFailure( view, -1)
+        bindIsFailure(view, -1)
         assertEquals(view.visibility, View.VISIBLE)
     }
 
     @Test
     fun isFailure_withRunningRequest_shouldReturnGone() {
-        bindIsFailure( view, 0)
+        bindIsFailure(view, 0)
         assertEquals(view.visibility, View.GONE)
     }
 
     @Test
     fun isFailure_withLoadedRequest_shouldReturnGone() {
-        bindIsFailure( view, 1)
+        bindIsFailure(view, 1)
         assertEquals(view.visibility, View.GONE)
     }
 }

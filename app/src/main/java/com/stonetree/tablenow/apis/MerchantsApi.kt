@@ -13,7 +13,7 @@ interface MerchantsApi {
 
     @GET(Endpoints.MERCHANTS)
     fun get(
-        @Query(OFF_SET) offSet: Long ?= 0,
-        @Query(LIMIT) limit: Int ?= PAGE_LIMIT
-        ): Call<MerchantsPool>
+        @Query(OFF_SET) offSet: Long? = 0,
+        @Query(LIMIT) limit: Int? = PAGE_LIMIT
+    ): Call<MerchantsPool>
 }

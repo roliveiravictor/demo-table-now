@@ -2,7 +2,7 @@ package com.stonetree.tablenow.extensions
 
 import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.*
+import androidx.recyclerview.widget.RecyclerView.LayoutParams
 import androidx.test.core.app.ApplicationProvider
 import com.stonetree.tablenow.extensions.ExtensionsTest.Constants.PROPORTION
 import com.stonetree.tablenow.models.Address

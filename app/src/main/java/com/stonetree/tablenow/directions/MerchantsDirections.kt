@@ -19,6 +19,7 @@ class MerchantsDirections private constructor() {
     }
 
     companion object {
-        fun actionMerchantsToDetails(merchant: Merchant): NavDirections = ActionMerchantsToDetails(merchant)
+        fun actionMerchantsToDetails(merchant: Merchant): NavDirections =
+            ActionMerchantsToDetails(merchant)
     }
 }

@@ -8,14 +8,14 @@ import androidx.test.core.app.ApplicationProvider
 import com.stonetree.restclient.core.model.NetworkState
 import com.stonetree.restclient.core.model.NetworkState.Companion.LOADED
 import com.stonetree.restclient.core.model.NetworkState.Companion.LOADING
-import junit.framework.TestCase.*
+import junit.framework.TestCase.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.test.AutoCloseKoinTest
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)
-class BindersTest: AutoCloseKoinTest() {
+class BindersTest : AutoCloseKoinTest() {
 
     private val view: TextView = TextView(
         ApplicationProvider.getApplicationContext()

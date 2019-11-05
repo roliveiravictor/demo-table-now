@@ -7,7 +7,7 @@ import com.stonetree.tablenow.models.Merchant
 
 object Mocks {
 
-    private val address = Address (
+    private val address = Address(
         "",
         ""
     )

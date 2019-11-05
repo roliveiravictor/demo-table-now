@@ -3,9 +3,7 @@ package com.stonetree.tablenow.binders
 import android.content.res.Configuration.ORIENTATION_LANDSCAPE
 import android.content.res.Configuration.ORIENTATION_PORTRAIT
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -16,7 +14,6 @@ import com.stonetree.tablenow.R
 import com.stonetree.tablenow.extensions.calculateHeight
 import com.stonetree.tablenow.extensions.calculateWidth
 import com.stonetree.tablenow.extensions.resize
-
 
 @BindingAdapter("isIdle")
 fun bindIsIdle(view: View, network: NetworkState?) {

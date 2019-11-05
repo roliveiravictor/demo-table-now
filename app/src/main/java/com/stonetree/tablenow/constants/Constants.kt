@@ -1,6 +1,5 @@
 package com.stonetree.tablenow.constants
 
-
 object Constants {
 
     object Endpoints {

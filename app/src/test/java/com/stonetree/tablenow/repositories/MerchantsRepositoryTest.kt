@@ -1,16 +1,14 @@
 package com.stonetree.tablenow.repositories
 
-import com.stonetree.restclient.feature.RestClient
 import com.stonetree.restclient.feature.repository.CoreRepository
-import junit.framework.TestCase.*
-import org.hamcrest.MatcherAssert.*
+import junit.framework.TestCase.assertNotNull
+import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.any
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.test.AutoCloseKoinTest
 import org.koin.test.inject
-import org.mockito.Mockito.mock
 import org.robolectric.RobolectricTestRunner
 
 @RunWith(RobolectricTestRunner::class)

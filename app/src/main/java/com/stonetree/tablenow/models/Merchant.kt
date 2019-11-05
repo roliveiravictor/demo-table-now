@@ -8,4 +8,4 @@ data class Merchant(
     val reviewScore: Float,
     val location: Location,
     val images: List<Image>
-    ) : Serializable
+) : Serializable
