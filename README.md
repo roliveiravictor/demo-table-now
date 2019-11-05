@@ -97,6 +97,7 @@
   -  `./gradlew check` to run static code analysers
   -  `./gradlew test` to run all unit tests
   -  `./gradlew connectedAndroidTest ` to run all instrumented tests
+  -  `./gradlew jacocoTestReport ` to run coverage report
 
 # Requirements
 
