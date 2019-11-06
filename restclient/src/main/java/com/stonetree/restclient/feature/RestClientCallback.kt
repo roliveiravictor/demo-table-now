@@ -19,8 +19,12 @@ class RestClientCallback<T>(private val network: MutableLiveData<NetworkState>?)
     }
 
     override fun onResponse(call: Call<T>, response: Response<T>) {
-        network?.postValue(NetworkState.LOADED)
-        onResponse?.invoke(response)
-        RestClientIdling.getResource().decrement()
+        if(response.isSuccessful) {
+            network?.postValue(NetworkState.LOADED)
+            onResponse?.invoke(response)
+            RestClientIdling.getResource().decrement()
+        } else {
+            onFailure(call, Throwable(response.message()))
+        }
     }
 }

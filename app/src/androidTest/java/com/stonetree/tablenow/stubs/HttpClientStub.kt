@@ -13,16 +13,12 @@ import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.mockwebserver.MockResponse
 import java.util.concurrent.TimeUnit
 
-class HttpClientStub(interceptor: RestClientInterceptor, context: Context) : CoreHttpClient {
+class HttpClientStub(
+    interceptor: RestClientInterceptor,
+    private val mocks: Map<RequestFilter, MockResponse>
+) : CoreHttpClient {
 
     private val interceptor: HttpLoggingInterceptor = interceptor.log()
-
-    private val mocks: Map<RequestFilter, MockResponse> = mapOf(
-        RequestFilter(Endpoints.MERCHANTS) to MockResponse().apply {
-            setResponseCode(200)
-            setBody("merchants.json".readFile(context))
-        }
-    )
 
     override fun create() = OkHttpClient.Builder()
         .connectTimeout(TIMEOUT, TimeUnit.SECONDS)

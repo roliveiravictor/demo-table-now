@@ -40,6 +40,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bad_request_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:isFailure="@{network}"
