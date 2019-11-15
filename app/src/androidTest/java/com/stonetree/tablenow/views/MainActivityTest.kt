@@ -19,6 +19,13 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ *  https://github.com/linkedin/test-butler/issues/71
+ *  Butler incompatibility with Emulators using Play Store
+ *  Also, some API incompatibilities
+ *
+ */
+
 @RunWith(AndroidJUnit4::class)
 class MainActivityTest {
 
