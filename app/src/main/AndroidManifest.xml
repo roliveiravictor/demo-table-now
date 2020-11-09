@@ -16,7 +16,7 @@
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyB10xFOv41J-6jtvyJ1WFTuiTJk4XNdUfg" />
+            android:value="AIzaSyBnxTmykehbjiB0x1H1EDSoD6phZC5aokE" />
 
         <activity
             android:name=".views.NavigatorActivity"
