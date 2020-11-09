@@ -26,12 +26,6 @@ staticAnalysis {
         includeVariants { variant -> variant.name.contains('debug') }
     }
 
-    findbugs {
-        toolVersion '3.0.1'
-        excludeFilter rootProject.file('sca-config/findbugs-excludes.xml')
-        includeVariants { variant -> variant.name.contains('debug') }
-    }
-
     lintOptions {
         lintConfig rootProject.file('sca-config/lint-config.xml')
         checkReleaseBuilds false
